@@ -1,6 +1,25 @@
-#include "header.h"
+#include <iostream>
+#include <thread>
+#include <chrono>
+
+#include "SensorSimulator.h"
+#include "VitalAnalyzer.h"
+#include "DataLogger.h"
 
 int main()
 {
-    return 0;
+    SensorSimulator sensor;
+    VitalAnalyzer analyzer;
+    DataLogger logger;
+
+    while (true)
+    {
+        VitalSigns vitals = sensor.readVitals();
+
+        analyzer.analyze(vitals);
+
+        logger.log(vitals);
+
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+    }
 }

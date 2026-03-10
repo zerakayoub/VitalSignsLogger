@@ -1,0 +1,23 @@
+#ifndef SENSOR_SIMULATOR_H
+#define SENSOR_SIMULATOR_H
+
+#include <string>
+
+struct VitalSigns
+{
+    int heartRate;
+    int spo2;
+    int respirationRate;
+    int bloodPressureSystolic;
+    int bloodPressureDiastolic;
+    std::string bloodPressure;
+    std::string timestamp;
+};
+
+class SensorSimulator
+{
+public:
+    VitalSigns readVitals();
+};
+
+#endif
