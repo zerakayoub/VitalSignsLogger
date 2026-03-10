@@ -9,5 +9,6 @@ void DataLogger::log(const VitalSigns &v)
          << v.timestamp
          << "Heart Rate: " << v.heartRate << "\n"
          << "SpO2: " << v.spo2 << "\n"
-         << "Respiration Rate: " << v.respirationRate << "\n";
+         << "Respiration Rate: " << v.respirationRate << "\n"
+         << "Blood Pressure: " << v.bloodPressure << "\n";
 }

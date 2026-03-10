@@ -14,4 +14,10 @@ void VitalAnalyzer::analyze(const VitalSigns &v)
 
     if (v.respirationRate < 12 || v.respirationRate > 20)
         std::cout << "WARNING: Abnormal Respiration\n";
+
+    if (v.respirationRate < 12 || v.respirationRate > 20)
+        std::cout << "WARNING: Abnormal Respiration\n";
+
+    if ((v.bloodPressureSystolic < 90 || v.bloodPressureSystolic > 129) || (v.bloodPressureDiastolic < 60 || v.bloodPressureDiastolic > 80))
+        std::cout << "WARNING: Abnormal Blood Pressure\n";
 }

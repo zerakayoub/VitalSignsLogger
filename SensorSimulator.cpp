@@ -11,8 +11,8 @@ VitalSigns SensorSimulator::readVitals()
     std::uniform_int_distribution<> hr(50, 120);
     std::uniform_int_distribution<> spo2(85, 100);
     std::uniform_int_distribution<> resp(8, 25);
-    std::uniform_int_distribution<> bp_systolic(90, 140);
-    std::uniform_int_distribution<> bp_diastolic(60, 90);
+    std::uniform_int_distribution<> bp_systolic(80, 140);
+    std::uniform_int_distribution<> bp_diastolic(50, 90);
 
     VitalSigns v;
 
@@ -21,7 +21,7 @@ VitalSigns SensorSimulator::readVitals()
     v.respirationRate = resp(gen);
     v.bloodPressureSystolic = bp_systolic(gen);
     v.bloodPressureDiastolic = bp_diastolic(gen);
-    v.bloodPressure = std::to_string(v.bloodPressureSystolic) + "/" + std::to_string(v.bloodPressureDiastolic);
+    v.bloodPressure = std::to_string(v.bloodPressureSystolic) + " / " + std::to_string(v.bloodPressureDiastolic);
 
     time_t now = time(0);
     v.timestamp = ctime(&now);
